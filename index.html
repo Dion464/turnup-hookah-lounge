@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="sq">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Turn Up Hookah Lounge – shisha, ndeshje live dhe terrasë në Bulevardin Bill Clinton, Prishtinë. Hapur çdo natë deri në 03:00.">
+<meta name="theme-color" content="#0b0505">
+<title>Turn Up Hookah Lounge</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gloock&family=Pinyon+Script&family=Jost:wght@300;400;500;600&display=swap">
+<style>
+:root{padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom)}body{margin:0}[hidden]{display:none!important}
+/* Layout: cinematic ember-red night editorial — centered tall wordmark, split blocks, rust menu slab, social grid */
+:root{
+  --bg:#0b0505;          /* room in the dark */
+  --bg-2:#140807;
+  --ox:#2b0c0a;          /* oxblood */
+  --rust:#b63f25;        /* menu slab */
+  --rust-2:#9c321c;
+  --amber:#f2a35a;       /* coal glow */
+  --cream:#f4e4d2;
+  --muted:#b79d8d;
+  --line:rgba(244,228,210,.16);
+  --ok:#8fe3a6;
+  --display:"Gloock","Bodoni 72","Didot",Georgia,serif;
+  --script:"Pinyon Script","Snell Roundhand","Brush Script MT",cursive;
+  --body:"Jost",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--cream);font-family:var(--body);font-size:15px;line-height:1.6;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:90;background:var(--bg)}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:1px solid var(--amber);outline-offset:4px}
+.pad{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.max{max-width:1320px;margin:0 auto}
+.label{font:600 .68rem var(--body);letter-spacing:.22em;text-transform:uppercase}
+.muted{color:var(--muted)}
+h1,h2,h3{margin:0;font-weight:400;line-height:.9;text-wrap:balance}
+.script{font-family:var(--script);font-weight:400;text-transform:none;letter-spacing:0}
+[data-l="en"]{display:none}
+html[lang="en"] [data-l="sq"]{display:none}
+html[lang="en"] [data-l="en"]{display:revert}
+
+/* demo strip */
+.demo{background:var(--rust);color:var(--cream);text-align:center}
+.demo .max{padding-block:6px}
+
+/* ---------- top bar: one clean row ---------- */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:80;background:linear-gradient(180deg,rgba(11,5,5,.85),rgba(11,5,5,0));transition:background .4s}
+.top.solid{background:rgba(11,5,5,.9);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.top .max{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
+.wordmark{text-decoration:none;display:flex;align-items:baseline;gap:8px;line-height:1;transition:opacity .4s}
+.wordmark b{font-family:var(--display);font-weight:400;font-size:1.5rem;letter-spacing:.02em}
+.wordmark .script{font-size:1.15rem;color:var(--amber)}
+.top.in-hero .wordmark{opacity:0;pointer-events:none}
+.top nav{display:flex;align-items:center;gap:26px}
+.top nav ul{list-style:none;margin:0;padding:0;display:flex;gap:26px}
+.top nav a{text-decoration:none;opacity:.8}
+.top nav a:hover{opacity:1;color:var(--amber)}
+.lang{display:flex;gap:2px}
+.lang button{background:none;border:1px solid var(--line);color:var(--muted);font:500 .64rem var(--body);letter-spacing:.14em;padding:5px 8px;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--cream);color:var(--bg);border-color:var(--cream)}
+.burger{display:none;background:none;border:0;padding:8px;cursor:pointer}
+.burger span{display:block;width:26px;height:1px;background:var(--cream);margin:6px 0}
+.status{display:inline-flex;align-items:center;gap:8px}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--muted)}
+.status.open .dot{background:var(--ok);box-shadow:0 0 8px var(--ok)}
+@media (max-width:820px){
+  .top nav ul{display:none}
+  .burger{display:block}
+  .top nav ul.open{display:grid;position:absolute;right:max(16px,env(safe-area-inset-right,0px));top:100%;background:var(--bg-2);border:1px solid var(--line);padding:18px 22px;gap:14px}
+}
+/* ---------- hero: cinematic slideshow + mega wordmark ---------- */
+.hero{position:relative;overflow:hidden;isolation:isolate;margin-top:-64px;padding-top:64px;min-height:calc(100svh - 30px);display:flex;flex-direction:column;justify-content:space-between;background:var(--bg)}
+.slides{position:absolute;inset:0;z-index:-3}
+.slides img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.12)}
+.slides img.on{opacity:1}
+.hero::before{content:"";position:absolute;inset:0;z-index:-2;background:
+  radial-gradient(70% 50% at 50% 100%,rgba(182,63,37,.35),transparent 70%),
+  linear-gradient(180deg,rgba(11,5,5,.7) 0%,rgba(11,5,5,.15) 30%,rgba(11,5,5,.35) 60%,rgba(11,5,5,.96) 100%)}
+.grain{position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.12;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+#smoke{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+.hero-top,.hero-bottom{position:relative;z-index:2}
+.hero-top .max{display:flex;justify-content:space-between;gap:12px;padding-block:22px}
+.hero-top .label{opacity:.9}
+.mega-wrap{position:relative;z-index:2;margin-block:auto;padding-top:40px}
+.mega{font-family:var(--display);text-transform:uppercase;line-height:.8;font-size:clamp(5rem,15.5vw,17rem);letter-spacing:-.02em;display:flex;justify-content:center;gap:.14em;white-space:nowrap;margin:0}
+.mega .w{display:inline-flex;overflow:hidden;padding-top:.06em}
+.mega .ch{display:inline-block;will-change:transform}
+.mega .w:last-child .ch{color:transparent;-webkit-text-stroke:1.5px var(--cream);font-style:normal}
+.mega-script{position:absolute;left:50%;bottom:-.15em;transform:translateX(-50%) rotate(-6deg);font-family:var(--script);color:var(--amber);font-size:clamp(2.6rem,7vw,7rem);line-height:1;white-space:nowrap;text-shadow:0 4px 30px rgba(0,0,0,.6);pointer-events:none}
+.hero-bottom .max{display:grid;grid-template-columns:1.1fr auto auto;align-items:end;gap:24px;padding-block:26px 30px}
+.hero-bottom p{margin:0;max-width:38ch;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;line-height:1.7}
+.ctas{display:flex;gap:10px;flex-wrap:wrap}
+.slide-ctrl{display:grid;gap:8px;min-width:150px;background:none;border:0;color:var(--cream);text-align:left;cursor:pointer;padding:0}
+.slide-ctrl .num{font-family:var(--display);font-size:1.4rem;letter-spacing:.04em}
+.slide-ctrl .num small{font-family:var(--body);font-size:.62rem;letter-spacing:.22em;margin-left:8px;opacity:.75}
+.bar{height:1px;background:rgba(244,228,210,.25);position:relative;overflow:hidden}
+.bar i{position:absolute;inset:0;background:var(--amber);transform-origin:0 50%;transform:scaleX(0)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;border:1px solid var(--cream);color:var(--cream);background:transparent;padding:14px 22px;font:600 .7rem var(--body);letter-spacing:.2em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:background .3s,color .3s,border-color .3s}
+.btn:hover{background:var(--cream);color:var(--bg)}
+.btn.fill{background:var(--cream);color:var(--bg)}
+.btn.fill:hover{background:var(--amber);border-color:var(--amber)}
+@media (max-width:820px){
+  .hero{min-height:calc(100svh - 30px)}
+  .hero-top .max{padding-block:16px}
+  .hero-top .hide-m{display:none}
+  .mega{flex-direction:column;align-items:flex-start;gap:0;font-size:clamp(4.6rem,27vw,11rem);line-height:.86;padding-left:max(16px,env(safe-area-inset-left,0px))}
+  .mega .w{padding-top:.04em}
+  .mega-script{left:auto;right:max(14px,env(safe-area-inset-right,0px));bottom:.15em;transform:rotate(-8deg);font-size:clamp(2.4rem,13vw,4.6rem)}
+  .hero-bottom .max{grid-template-columns:1fr;gap:18px;padding-block:20px 22px}
+  .ctas{display:grid;grid-template-columns:1fr 1fr}
+  .ctas .btn{padding-inline:10px}
+  .slide-ctrl{order:-1;min-width:0}
+}
+/* ---------- split (photo | black) ---------- */
+.split{display:grid;grid-template-columns:1fr 1fr;min-height:560px}
+.split .ph{position:relative;overflow:hidden;min-height:360px}
+.split .ph img{position:absolute;inset:-8% 0;width:100%;height:116%;object-fit:cover}
+.split .tx{background:#070303;display:flex;flex-direction:column;justify-content:space-between;gap:40px;padding-block:clamp(28px,4vw,48px)}
+.split .tx h2{font-family:var(--display);font-size:clamp(1.6rem,3vw,2.4rem);text-transform:uppercase;letter-spacing:.02em}
+.split .tx p{max-width:40ch;font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;line-height:1.7;margin:0 0 20px}
+.facts{display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:28px;margin-top:18px}
+.facts b{display:block;font-family:var(--display);font-size:2.4rem;line-height:1;color:var(--amber);font-weight:400}
+@media (max-width:820px){.split{grid-template-columns:1fr}}
+
+/* ---------- menu slab ---------- */
+.menu{background:var(--rust)}
+.menu .max{padding-block:clamp(34px,5vw,60px)}
+.menu-head{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:clamp(40px,7vw,90px)}
+.menu-head h2{font-family:var(--body);font-weight:500;font-size:clamp(1.1rem,2vw,1.5rem);letter-spacing:.12em;text-transform:uppercase}
+.menu-head h2 .script{display:block;font-size:2.4em;letter-spacing:0;line-height:1;color:var(--cream);margin-bottom:6px}
+.menu-head p{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;line-height:1.7;max-width:38ch;margin:0}
+.tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:12px}
+.tabs button{background:none;border:0;border-bottom:1px solid rgba(244,228,210,.35);color:var(--cream);text-align:left;padding:0 0 10px;font:600 .68rem var(--body);letter-spacing:.22em;text-transform:uppercase;cursor:pointer;opacity:.7}
+.tabs button[aria-selected="true"]{opacity:1;border-bottom-color:var(--cream)}
+.tabs button:last-child{text-align:right}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.card{min-width:0}
+.card .im{aspect-ratio:3/4;overflow:hidden;background:var(--rust-2)}
+.card img{width:100%;height:100%;object-fit:cover;transition:transform 1s cubic-bezier(.2,.7,.2,1)}
+.card:hover img{transform:scale(1.05)}
+.card .meta{display:flex;justify-content:space-between;gap:10px;padding-top:12px;align-items:baseline}
+.card h3{font-family:var(--display);font-size:1.35rem;text-transform:uppercase;letter-spacing:.02em}
+.card .price{font:600 .85rem var(--body);font-variant-numeric:tabular-nums}
+.card p{margin:4px 0 0;font-size:.78rem;opacity:.85}
+.menu-note{margin-top:26px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase}
+@media (max-width:900px){.cards,.tabs{grid-template-columns:repeat(2,1fr)}.tabs button:last-child{text-align:left}.menu-head{grid-template-columns:1fr}}
+
+/* ---------- three-up atmosphere ---------- */
+.trio{display:grid;grid-template-columns:1.2fr .8fr 1fr;gap:3px;background:var(--bg)}
+.trio figure{margin:0;position:relative;overflow:hidden;aspect-ratio:3/4;max-width:100%}
+.trio img{width:100%;height:100%;object-fit:cover}
+.trio figcaption{position:absolute;left:18px;bottom:16px;right:18px}
+.trio figcaption .script{font-size:2.2rem;line-height:1;color:var(--cream)}
+@media (max-width:820px){.trio{grid-template-columns:1fr 1fr}.trio figure:first-child{grid-column:1/-1;aspect-ratio:4/3}}
+
+/* ---------- social grid ---------- */
+.social .max{padding-block:clamp(70px,9vw,120px)}
+.social-head{display:flex;justify-content:space-between;align-items:end;flex-wrap:wrap;gap:18px;margin-bottom:34px}
+.social-head h2{font-family:var(--display);font-size:clamp(2.6rem,6vw,5rem);text-transform:uppercase}
+.social-head h2 .script{display:block;font-size:.5em;color:var(--amber);line-height:1.2}
+.ig{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;max-width:900px;margin:0 auto}
+.ig>div{position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--ox)}
+.ig img{width:100%;height:100%;object-fit:cover}
+.ig .ov{position:absolute;inset:0;display:grid;place-content:center;text-align:center;padding:12px}
+.ig .ov .script{font-size:clamp(1.3rem,3.2vw,2.3rem);line-height:1;color:var(--cream);text-shadow:0 2px 20px rgba(0,0,0,.6)}
+.ig .ov b{font-family:var(--display);font-weight:400;font-size:clamp(.9rem,2vw,1.3rem);letter-spacing:.06em;text-transform:uppercase}
+.ig .tile-rust{background:var(--rust)}
+.ig .tile-rust .big{font-family:var(--display);font-size:clamp(1.8rem,5vw,3.4rem);line-height:.9;text-transform:uppercase}
+.ig .chip{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:var(--cream);color:var(--bg);font-family:var(--display);font-size:clamp(.8rem,1.8vw,1.1rem);letter-spacing:.04em;padding:8px 14px;text-transform:uppercase;white-space:nowrap}
+
+/* ---------- visit ---------- */
+.visit{display:grid;grid-template-columns:1fr 1fr;min-height:520px}
+.visit .ph{position:relative;overflow:hidden;min-height:340px}
+.visit .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.visit .tx{background:var(--ox);padding-block:clamp(28px,4vw,48px);display:flex;flex-direction:column;justify-content:space-between;gap:28px}
+.visit h2{font-family:var(--display);font-size:clamp(2rem,4vw,3.2rem);text-transform:uppercase}
+table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums;font-size:.82rem;letter-spacing:.06em;text-transform:uppercase}
+td{padding:10px 0;border-bottom:1px solid var(--line)}
+td:last-child{text-align:right}
+tr.today td{color:var(--amber)}
+@media (max-width:820px){.visit{grid-template-columns:1fr}}
+
+/* ---------- reserve ---------- */
+.reserve .max{padding-block:clamp(70px,9vw,120px);display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(28px,5vw,80px)}
+.reserve h2{font-family:var(--display);font-size:clamp(2.6rem,6vw,5rem);text-transform:uppercase}
+.reserve h2 .script{display:block;font-size:.5em;color:var(--amber);line-height:1.2}
+form{display:grid;grid-template-columns:1fr 1fr;gap:22px 18px}
+form .full{grid-column:1/-1}
+label{display:grid;gap:8px;font:600 .64rem var(--body);letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+input,select{width:100%;min-width:0;background:transparent;border:0;border-bottom:1px solid var(--line);color:var(--cream);padding:10px 0;font:500 1.05rem var(--body);border-radius:0}
+input:focus,select:focus{outline:none;border-bottom-color:var(--amber)}
+select option{background:var(--bg-2)}
+.phone{font-family:var(--display);font-size:1.8rem;letter-spacing:.03em;user-select:all}
+.copy{margin-left:10px;background:none;border:1px solid var(--line);color:var(--muted);font:600 .62rem var(--body);letter-spacing:.18em;padding:5px 9px;cursor:pointer;vertical-align:middle}
+@media (max-width:820px){.reserve .max{grid-template-columns:1fr}}
+@media (max-width:480px){form{grid-template-columns:1fr}}
+
+footer .max{border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;padding-block:28px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+
+<div class="demo label pad"><div class="max">
+  <span data-l="sq">Demo · Propozim për web faqe dhe rebranding për Turn Up · nga Dion Curri</span>
+  <span data-l="en">Demo · Website and rebrand proposal for Turn Up · by Dion Curri</span>
+</div></div>
+
+<header class="top pad">
+  <div class="max">
+    <a class="wordmark" href="#top" aria-label="Turn Up Hookah Lounge"><b>Turn Up</b><span class="script">hookah lounge</span></a>
+    <nav aria-label="Main">
+      <ul class="label" id="navlist">
+        <li><a href="#lounge"><span data-l="sq">Lokali</span><span data-l="en">The lounge</span></a></li>
+        <li><a href="#menu"><span data-l="sq">Menyja</span><span data-l="en">Menu</span></a></li>
+        <li><a href="#social"><span data-l="sq">Netët</span><span data-l="en">Nights</span></a></li>
+        <li><a href="#reserve"><span data-l="sq">Rezervo</span><span data-l="en">Book</span></a></li>
+      </ul>
+      <div class="lang" role="group" aria-label="Language"><button id="lang-sq" type="button" aria-pressed="true">SQ</button><button id="lang-en" type="button" aria-pressed="false">EN</button></div>
+      <button class="burger" id="burger" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="slides" id="slides">
+    <img class="on" src="img/lounge.jpg" alt="Turn Up lounge with armchairs and warm lights">
+    <img src="img/coals.jpg" alt="Glowing coals on hookah bowls">
+    <img src="img/street.jpg" alt="The terrace on Bulevardi Bill Clinton at night">
+  </div>
+  <div class="grain"></div>
+  <canvas id="smoke" aria-hidden="true"></canvas>
+
+  <div class="mega-wrap">
+    <h1 class="mega" aria-label="Turn Up Hookah Lounge"><span class="w"><span class="ch">T</span><span class="ch">U</span><span class="ch">R</span><span class="ch">N</span></span><span class="w"><span class="ch">U</span><span class="ch">P</span></span></h1>
+    <span class="mega-script" aria-hidden="true">hookah lounge</span>
+  </div>
+
+  <div class="hero-bottom pad"><div class="max">
+    <div style="display:grid;gap:12px"><span class="status label" id="status"><span class="dot"></span><span id="status-text">…</span></span><p><span data-l="sq">Shisha e butë, ndeshjet e mëdha dhe netët që zgjasin. Bulevardi Bill Clinton, Prishtinë.</span><span data-l="en">Smooth shisha, big matches and long nights. Bulevardi Bill Clinton, Prishtina.</span></p></div>
+    <button class="slide-ctrl" id="slideCtrl" type="button" aria-label="Next photo">
+      <span class="num"><span id="sNum">01</span> / 03<small id="sName">Salla</small></span>
+      <span class="bar"><i id="sBar"></i></span>
+    </button>
+    <div class="ctas">
+      <a class="btn fill" href="#reserve"><span data-l="sq">Rezervo</span><span data-l="en">Book</span></a>
+      <a class="btn" href="#menu"><span data-l="sq">Menyja</span><span data-l="en">Menu</span></a>
+    </div>
+  </div></div>
+</section>
+
+<section class="split" id="lounge">
+  <div class="ph"><img class="par" src="img/coals.jpg" alt="Glowing coals on hookah bowls, seen from above" loading="lazy"></div>
+  <div class="tx pad">
+    <div>
+      <div class="label muted" style="margin-bottom:14px">Bulevardi Bill Clinton</div>
+      <h2><span data-l="sq">Lokali ku nata ngadalësohet</span><span data-l="en">Where the night slows down</span></h2>
+    </div>
+    <div>
+      <p><span data-l="sq">Turn Up është vendi për shisha të butë dhe të pastër, për ndeshjet e mëdha me shoqërinë dhe për bisedat që zgjasin deri vonë. Mysafirët në Google e përshkruajnë si një nga vendet më të mira për shisha në qytet.</span><span data-l="en">Turn Up is the place for smooth, clean shisha, big matches with friends and conversations that run late. Guests on Google call it one of the best shisha spots in the city.</span></p>
+      <a class="btn" href="#reserve"><span data-l="sq">Rezervo</span><span data-l="en">Book</span></a>
+      <div class="facts">
+        <div><b>4.9</b><span class="label muted"><span data-l="sq">85 vlerësime</span><span data-l="en">85 reviews</span></span></div>
+        <div><b>03:00</b><span class="label muted"><span data-l="sq">çdo natë</span><span data-l="en">every night</span></span></div>
+        <div><b>5–10€</b><span class="label muted"><span data-l="sq">për person</span><span data-l="en">per person</span></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="menu" id="menu"><div class="max pad">
+  <div class="menu-head">
+    <h2><span class="script"><span data-l="sq">Menyja</span><span data-l="en">Menu</span></span>Nº 01</h2>
+    <p><span data-l="sq">Shisha me shije të freskëta, kombinime të veçanta dhe pije që shkojnë me to. Menyja ndryshon sipas sezonit.</span><span data-l="en">Shisha with fresh flavours, signature blends and drinks to match. The menu changes with the season.</span></p>
+  </div>
+  <div class="tabs" role="tablist" id="tabs">
+    <button role="tab" data-cat="shisha" aria-selected="true">Shisha</button>
+    <button role="tab" data-cat="signature" aria-selected="false">Signature</button>
+    <button role="tab" data-cat="drinks" aria-selected="false"><span data-l="sq">Pije</span><span data-l="en">Drinks</span></button>
+    <button role="tab" data-cat="all" aria-selected="false"><span data-l="sq">Të gjitha</span><span data-l="en">All</span></button>
+  </div>
+  <div class="cards" id="cards"></div>
+  <div class="menu-note"><span><span data-l="sq">Çmimet janë shembull për demo</span><span data-l="en">Prices are a demo sample</span></span><span><span data-l="sq">Mesatarja sipas Google: 5–10€ për person</span><span data-l="en">Google average: €5–10 per person</span></span></div>
+</div></section>
+
+<section class="trio" aria-label="Atmosphere">
+  <figure><img class="par" src="img/interior.jpg" alt="Main room with armchairs and screens" loading="lazy"><figcaption><span class="script"><span data-l="sq">salla kryesore</span><span data-l="en">the main room</span></span></figcaption></figure>
+  <figure><img src="img/smoke.jpg" alt="Hookah base in a cloud of smoke" loading="lazy"><figcaption><span class="script"><span data-l="sq">tym i butë</span><span data-l="en">soft clouds</span></span></figcaption></figure>
+  <figure><img src="img/street.jpg" alt="The terrace on the boulevard at night" loading="lazy"><figcaption><span class="script"><span data-l="sq">terrasa</span><span data-l="en">the terrace</span></span></figcaption></figure>
+</section>
+
+<section class="social" id="social"><div class="max pad">
+  <div class="social-head">
+    <h2><span class="script">@turnup.prishtina</span><span data-l="sq">Netët te Turn Up</span><span data-l="en">Nights at Turn Up</span></h2>
+    <p class="label muted" style="max-width:34ch;margin:0;line-height:1.8"><span data-l="sq">Kështu duket profili në Instagram me postimet tona të reja.</span><span data-l="en">How the Instagram profile looks with the new posts.</span></p>
+  </div>
+  <div class="ig">
+    <div><img src="img/terrace.jpg" alt="Hookah on the terrace" loading="lazy"></div>
+    <div><img src="img/friends.jpg" alt="Friends on the terrace at night" loading="lazy"><div class="ov"><span class="script"><span data-l="sq">Natë me shoqërinë</span><span data-l="en">Night with the crew</span></span></div></div>
+    <div><img src="img/match.jpg" alt="Hookah with a match on the screen" loading="lazy"><div class="ov" style="align-content:start;padding-top:22px"><span class="script"><span data-l="sq">Ndeshja e madhe</span><span data-l="en">Big game</span></span><b><span data-l="sq">Sonte live</span><span data-l="en">Live tonight</span></b></div></div>
+    <div><img src="img/glass.jpg" alt="Crystal hookah base" loading="lazy"></div>
+    <div><img src="img/coals.jpg" alt="Coals close up" loading="lazy"><div class="ov"><span class="script"><span data-l="sq">qymyr i freskët</span><span data-l="en">fresh coals</span></span></div></div>
+    <div><img src="img/sign.jpg" alt="Lounge entrance at night" loading="lazy"><span class="chip"><span data-l="sq">Promo e së enjtes</span><span data-l="en">Thursday promo</span></span></div>
+    <div><img src="img/duo.jpg" alt="Two hookahs" loading="lazy"></div>
+    <div class="tile-rust"><div class="ov"><span class="script"><span data-l="sq">mixi i javës</span><span data-l="en">mix of the week</span></span><span class="big">Blueberry<br>Mint</span></div></div>
+    <div><img src="img/single.jpg" alt="Hookah by candlelight" loading="lazy"></div>
+  </div>
+</div></section>
+
+<section class="visit" id="visit">
+  <div class="ph"><img src="img/haze.jpg" alt="Hookahs on the terrace in evening haze" loading="lazy"></div>
+  <div class="tx pad">
+    <div>
+      <div class="label muted" style="margin-bottom:14px"><span data-l="sq">Orari</span><span data-l="en">Hours</span></div>
+      <h2><span data-l="sq">Hapur çdo ditë</span><span data-l="en">Open every day</span></h2>
+    </div>
+    <table id="hours" aria-label="Opening hours"></table>
+    <div>
+      <div class="label muted">Bulevardi Bill Clinton, Prishtinë 10000</div>
+      <p style="margin:14px 0 0"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Turn%20Up%20Shisha%20Bar%20Prishtin%C3%AB" target="_blank" rel="noopener">Google Maps ↗</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="reserve" id="reserve"><div class="max pad">
+  <div>
+    <h2><span class="script"><span data-l="sq">një tavolinë për ju</span><span data-l="en">a table for you</span></span><span data-l="sq">Rezervo</span><span data-l="en">Book</span></h2>
+    <p class="muted" style="max-width:36ch"><span data-l="sq">Plotëso formularin dhe rezervimi të hapet në WhatsApp, gati për ta dërguar. Ose na thirr:</span><span data-l="en">Fill in the form and your booking opens in WhatsApp, ready to send. Or call us:</span></p>
+    <p><span class="phone" id="phone">+383 49 177 565</span><button class="copy" id="copy" type="button">Copy</button></p>
+  </div>
+  <form id="form" novalidate>
+    <label for="f-name"><span data-l="sq">Emri</span><span data-l="en">Name</span><input id="f-name" autocomplete="name" value="Arben"></label>
+    <label for="f-people"><span data-l="sq">Persona</span><span data-l="en">Guests</span><select id="f-people"><option>2</option><option selected>4</option><option>6</option><option>8+</option></select></label>
+    <label for="f-date"><span data-l="sq">Data</span><span data-l="en">Date</span><input id="f-date" type="date"></label>
+    <label for="f-time"><span data-l="sq">Ora</span><span data-l="en">Time</span><input id="f-time" type="time" value="21:30"></label>
+    <label class="full" for="f-mix"><span data-l="sq">Shisha që dëshironi</span><span data-l="en">Shisha you'd like</span><input id="f-mix" value="Blueberry + Mint"></label>
+    <div class="full"><button class="btn fill" type="submit" style="width:100%;justify-content:center;padding-block:16px"><span data-l="sq">Dërgo në WhatsApp</span><span data-l="en">Send on WhatsApp</span></button></div>
+  </form>
+</div></section>
+
+<footer class="pad"><div class="max label muted">
+  <span>Turn Up · Hookah Lounge · Prishtinë</span>
+  <span><span data-l="sq">Demo dhe rebranding nga Dion Curri</span><span data-l="en">Demo and rebrand by Dion Curri</span></span>
+</div></footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches, root=document.documentElement;
+  let lang='sq';try{lang=localStorage.getItem('tu-lang')||'sq'}catch(e){}
+
+  /* hours (real, from Google) */
+  const H=[[570,180],[570,180],[570,180],[570,180],[570,180],[540,180],[720,180]];
+  const D={sq:['E hënë','E martë','E mërkurë','E enjte','E premte','E shtunë','E diel'],en:['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday']};
+  const fmt=m=>String(Math.floor(m/60)%24).padStart(2,'0')+':'+String(m%60).padStart(2,'0');
+  function now(){const p=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Belgrade',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date());return{wd:['Mon','Tue','Wed','Thu','Fri','Sat','Sun'].indexOf(p.find(x=>x.type==='weekday').value),min:(+p.find(x=>x.type==='hour').value%24)*60+ +p.find(x=>x.type==='minute').value}}
+  function renderHours(){const n=now();document.getElementById('hours').innerHTML=H.map((h,i)=>`<tr class="${i===n.wd?'today':''}"><td>${D[lang][i]}</td><td>${fmt(h[0])} – ${fmt(h[1])}</td></tr>`).join('');
+    const t=H[n.wd],y=H[(n.wd+6)%7],open=n.min>=t[0]||n.min<y[1];document.getElementById('status').classList.toggle('open',open);
+    document.getElementById('status-text').textContent=open?(lang==='sq'?'Hapur tani':'Open now'):(lang==='sq'?'Hapet '+fmt(t[0]):'Opens '+fmt(t[0]))}
+
+  /* menu (sample items, real photos) */
+  const M=[
+    {c:'shisha',img:'duo.jpg',n:'Classic',sq:'Një shije, qymyr natyral',en:'One flavour, natural coal',p:'8€'},
+    {c:'shisha',img:'single.jpg',n:'Double Mix',sq:'Dy shije sipas zgjedhjes',en:'Two flavours of your choice',p:'10€'},
+    {c:'shisha',img:'terrace.jpg',n:'Terrace Night',sq:'Shisha + çaj i ftohtë',en:'Shisha + iced tea',p:'11€'},
+    {c:'shisha',img:'coals.jpg',n:'Coal Refresh',sq:'Qymyr i ri në tavolinë',en:'Fresh coals to your table',p:'1€'},
+    {c:'signature',img:'glass.jpg',n:'Crystal',sq:'Bazë kristali, akull',en:'Crystal base, ice',p:'12€'},
+    {c:'signature',img:'smoke.jpg',n:'Cloud Nine',sq:'Kokë e madhe, tym i dendur',en:'Big bowl, dense clouds',p:'14€'},
+    {c:'signature',img:'match.jpg',n:'Match Night',sq:'Shisha për 4 + snacks',en:'Shisha for 4 + snacks',p:'30€'},
+    {c:'signature',img:'screen.jpg',n:'Fruit Head',sq:'Kokë ananasi ose shalqiri',en:'Pineapple or watermelon head',p:'15€'},
+    {c:'drinks',img:'corner.jpg',n:'Cola & Co',sq:'Pije freskuese',en:'Soft drinks',p:'2€'},
+    {c:'drinks',img:'interior.jpg',n:'Espresso',sq:'Kafe, macchiato, cappuccino',en:'Coffee, macchiato, cappuccino',p:'1.2€'},
+    {c:'drinks',img:'friends.jpg',n:'Mojito 0%',sq:'Pa alkool, me mente',en:'Alcohol-free, fresh mint',p:'3.5€'},
+    {c:'drinks',img:'sign.jpg',n:'Iced Tea',sq:'Çaj i ftohtë shtëpie',en:'House iced tea',p:'2.5€'}];
+  let cat='shisha';
+  function renderMenu(){const items=cat==='all'?M.filter((_,i)=>i%3===0).slice(0,4):M.filter(m=>m.c===cat).slice(0,4);
+    document.getElementById('cards').innerHTML=items.map(m=>`<article class="card"><div class="im"><img src="img/${m.img}" alt="${m.n}" loading="lazy"></div><div class="meta"><h3>${m.n}</h3><span class="price">${m.p}</span></div><p>${m[lang]}</p></article>`).join('');
+    if(window.gsap&&!reduce)gsap.from('#cards .card',{y:24,duration:.7,stagger:.07,ease:'power3.out'})}
+  document.querySelectorAll('#tabs button').forEach(b=>b.onclick=()=>{cat=b.dataset.cat;document.querySelectorAll('#tabs button').forEach(x=>x.setAttribute('aria-selected',x===b));renderMenu()});
+
+  function setLang(l){lang=l;root.lang=l;document.getElementById('lang-sq').setAttribute('aria-pressed',l==='sq');document.getElementById('lang-en').setAttribute('aria-pressed',l==='en');try{localStorage.setItem('tu-lang',l)}catch(e){}renderHours();renderMenu();if(window.__tuLabel)window.__tuLabel()}
+  document.getElementById('lang-sq').onclick=()=>setLang('sq');document.getElementById('lang-en').onclick=()=>setLang('en');
+  const burger=document.getElementById('burger'),nl=document.getElementById('navlist');
+  burger.onclick=()=>{const o=nl.classList.toggle('open');burger.setAttribute('aria-expanded',o)};
+  nl.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nl.classList.remove('open');burger.setAttribute('aria-expanded',false)}));
+
+  /* booking */
+  try{document.getElementById('f-date').value=new Date().toISOString().slice(0,10)}catch(e){}
+  document.getElementById('form').addEventListener('submit',e=>{e.preventDefault();const v=id=>document.getElementById(id).value;
+    const msg=lang==='sq'?`Përshëndetje Turn Up! Dua të rezervoj një tavolinë.\nEmri: ${v('f-name')}\nPersona: ${v('f-people')}\nData: ${v('f-date')}\nOra: ${v('f-time')}\nShisha: ${v('f-mix')||'-'}`:`Hi Turn Up! I'd like to book a table.\nName: ${v('f-name')}\nGuests: ${v('f-people')}\nDate: ${v('f-date')}\nTime: ${v('f-time')}\nShisha: ${v('f-mix')||'-'}`;
+    const a=document.createElement('a');a.href='https://wa.me/38349177565?text='+encodeURIComponent(msg);a.target='_blank';a.rel='noopener';document.body.appendChild(a);a.click();a.remove()});
+  document.getElementById('copy').onclick=async e=>{try{await navigator.clipboard.writeText('+38349177565');e.target.textContent='✓'}catch(err){const r=document.createRange();r.selectNodeContents(document.getElementById('phone'));const s=getSelection();s.removeAllRanges();s.addRange(r)}};
+
+  /* ambient smoke drifting through the hero */
+  const hero=document.querySelector('.hero'),cv=document.getElementById('smoke'),ctx=cv.getContext('2d');
+  let W=0,Hh=0,dpr=1;const P=[];const mobile=matchMedia('(max-width:820px)').matches;
+  function size(){const r=cv.getBoundingClientRect();dpr=Math.min(devicePixelRatio||1,mobile?1.5:2);W=cv.width=Math.max(1,r.width*dpr);Hh=cv.height=Math.max(1,r.height*dpr)}
+  size();addEventListener('resize',size);
+  const col=()=>{const r=Math.random();return r<.25?'255,165,95':r<.35?'200,70,40':'240,222,205'};
+  function mk(seed){const k=dpr*(mobile?1.3:1);return{x:Math.random()*W,y:seed?Math.random()*Hh:Hh+60*k,vx:(Math.random()-.5)*.35*k,vy:-(.25+Math.random()*.45)*k,r:(60+Math.random()*120)*k,g:.12*k,l:seed?Math.random()*500:0,m:600+Math.random()*400,sd:Math.random()*999,c:col()}}
+  const N=mobile?16:28;for(let i=0;i<N;i++)P.push(mk(true));
+  function tick(){ctx.clearRect(0,0,W,Hh);
+    for(const p of P){p.l++;p.x+=p.vx+Math.sin((p.l+p.sd)/90)*.5*dpr;p.y+=p.vy;p.r+=p.g;
+      const t=p.l/p.m,a=Math.sin(Math.PI*Math.min(1,t))*.09;
+      const g=ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,p.r);g.addColorStop(0,`rgba(${p.c},${a.toFixed(3)})`);g.addColorStop(1,`rgba(${p.c},0)`);
+      ctx.fillStyle=g;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,6.283);ctx.fill();
+      if(p.l>p.m||p.y+p.r<-50)Object.assign(p,mk(false))}
+    if(!reduce)requestAnimationFrame(tick)}
+  tick();
+
+  /* slideshow */
+  const imgs=[...document.querySelectorAll('#slides img')];
+  const names={sq:['Salla','Qymyri','Terrasa'],en:['Lounge','Coals','Terrace']};
+  let cur=0;
+  function label(){document.getElementById('sNum').textContent='0'+(cur+1);document.getElementById('sName').textContent=names[lang][cur]}
+  window.__tuLabel=label;
+
+  setLang(lang);setInterval(renderHours,60000);label();
+  function go(n){const prev=imgs[cur];cur=(n+imgs.length)%imgs.length;const next=imgs[cur];label();
+    if(window.gsap&&!reduce){gsap.set(next,{zIndex:2});gsap.set(prev,{zIndex:1});
+      gsap.fromTo(next,{opacity:0,scale:1.14},{opacity:1,scale:1.04,duration:1.6,ease:'power2.out',onComplete:()=>{prev.classList.remove('on');gsap.set(prev,{opacity:0})}});
+      next.classList.add('on');gsap.to(next,{scale:1,duration:7,ease:'none',delay:1.6})}
+    else{prev.classList.remove('on');next.classList.add('on')}
+    restartBar()}
+  let barTw;
+  function restartBar(){if(!window.gsap||reduce)return;if(barTw)barTw.kill();gsap.set('#sBar',{scaleX:0});barTw=gsap.to('#sBar',{scaleX:1,duration:6,ease:'none',onComplete:()=>go(cur+1)})}
+  document.getElementById('slideCtrl').onclick=()=>go(cur+1);
+
+  if(!window.gsap||reduce)return;
+  gsap.registerPlugin(ScrollTrigger);
+
+  /* intro (transform only — page reads complete without it) */
+  gsap.from('.wordmark',{y:-20,duration:1,ease:'power3.out'});
+  gsap.from('.mega .ch',{yPercent:105,duration:1.3,stagger:.06,ease:'power4.out',delay:.15});
+  gsap.from('.mega-script',{y:40,rotate:-14,duration:1.4,delay:.8,ease:'power3.out'});
+  gsap.from('.hero-bottom .max>*',{y:30,duration:1,stagger:.1,delay:.9,ease:'power3.out'});
+  gsap.fromTo(imgs[0],{scale:1.14},{scale:1,duration:8,ease:'power1.out'});
+  restartBar();
+
+  /* depth: wordmark and script move at different speeds */
+  if(!mobile){hero.addEventListener('pointermove',e=>{const r=hero.getBoundingClientRect(),dx=(e.clientX-r.left)/r.width-.5,dy=(e.clientY-r.top)/r.height-.5;
+    gsap.to('.mega',{x:dx*-24,y:dy*-10,duration:1.4,ease:'power3.out'});gsap.to('.mega-script',{x:dx*30,y:dy*14,duration:1.6,ease:'power3.out'});gsap.to('#slides',{x:dx*14,y:dy*8,duration:2,ease:'power3.out'})})}
+  ScrollTrigger.create({trigger:hero,start:'top bottom',end:'bottom 90px',toggleClass:{targets:'.top',className:'in-hero'}});
+  ScrollTrigger.create({start:80,end:'max',toggleClass:{targets:'.top',className:'solid'}});
+  gsap.to('.mega-wrap',{yPercent:-30,ease:'none',scrollTrigger:{trigger:hero,start:'top top',end:'bottom top',scrub:true}});
+  gsap.to('#slides',{yPercent:12,ease:'none',scrollTrigger:{trigger:hero,start:'top top',end:'bottom top',scrub:true}});
+
+  /* scroll */
+  gsap.utils.toArray('.par').forEach(img=>gsap.fromTo(img,{yPercent:-6},{yPercent:6,ease:'none',scrollTrigger:{trigger:img.parentElement,start:'top bottom',end:'bottom top',scrub:true}}));
+  gsap.utils.toArray('.split .tx>*, .menu-head>*, .social-head>*, .visit .tx>*, .reserve .max>*').forEach(el=>gsap.from(el,{y:50,duration:1,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 92%'}}));
+  gsap.from('.ig>div',{y:40,duration:.9,stagger:.06,ease:'power3.out',scrollTrigger:{trigger:'.ig',start:'top 85%'}});
+  gsap.from('.trio figure',{y:60,duration:1.1,stagger:.12,ease:'power3.out',scrollTrigger:{trigger:'.trio',start:'top 88%'}});
+})();
+</script>
+
+</body>
+</html>
